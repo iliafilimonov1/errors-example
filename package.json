@@ -1,0 +1,48 @@
+{
+  "name": "js-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/babel-preset-env": "^2.8.3",
+    "babel-jest": "^29.3.1",
+    "editorconfig-checker": "^5.0.1",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "jest": "^29.4.1",
+    "parcel": "^2.8.3"
+  },
+  "scripts": {
+    "serve": "parcel index.html",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js",
+    "editorconfig-check": "editorconfig-checker",
+    "test": "jest",
+    "build": "parcel index.html"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "eslint --cache"
+    ],
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  },
+  "dependencies": {
+    "husky": "^8.0.3"
+  }
+}
