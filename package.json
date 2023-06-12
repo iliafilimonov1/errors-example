@@ -30,9 +30,10 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{css,less,scss,html,json,jsx,js}": [
+      "prettier --write ."
+    ],
+    "*.js": "eslint --fix"
   },
   "jest": {
     "collectCoverage": true,
